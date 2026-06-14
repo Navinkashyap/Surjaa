@@ -8,7 +8,7 @@ const Header = ({ onToggleSidebar, onToggleMobileMenu }) => {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const [profileData, setProfileData] = useState({
     mobile: '',
-    email: 'piyush@perfectrans.com',
+    email: 'piyush@sujaatrance.com',
     dob: '2015-06-01',
     gender: 'Male',
     country: '',

@@ -12,11 +12,11 @@ const EMPTY_ITEMS = Array.from({ length: 10 }, (_, i) => ({
 }));
 
 const DEFAULT_FROM = {
-  fromCompany: 'Convaq Technologies Pvt. Ltd.',
+  fromCompany: 'Sujaatrance',
   fromAddress: 'B-11, Sector 65, Noida, IN 2001301',
   fromPhone: '+91-120-4280-274',
-  fromEmail: 'accounts@perfectrans.com',
-  fromWebsite: 'www.perfectrans.com',
+  fromEmail: 'accounts@sujaatrance.com',
+  fromWebsite: 'www.sujaatrance.com',
   fromGSTIN: '09AAGCC0048P1ZD',
 };
 
@@ -32,7 +32,7 @@ const DEFAULT_BANK = {
   swiftCode: 'ICICINBBCTS',
   micrCode: '110229002',
   accountType: 'Current',
-  paypalEmail: 'paypal@perfectrans.com',
+  paypalEmail: 'paypal@sujaatrance.com',
   payoneerEmail: '',
 };
 
@@ -163,13 +163,13 @@ export default function AddInvoice() {
     }
 
     const selectedProject = projects.find((p) => p._id === projectId);
-    
+
     if (selectedProject) {
       let particularsText = '';
       const po = selectedProject.clientPO ? `PO No: ${selectedProject.clientPO}` : '';
       const name = selectedProject.isProgramGroup ? selectedProject.programName : selectedProject.projectName;
       const code = selectedProject.projectCode ? `Code: ${selectedProject.projectCode}` : '';
-      
+
       particularsText = [po, name, code].filter(Boolean).join(' / ');
 
       // Try to calculate total fees and words from targets/tasks if available
@@ -201,10 +201,10 @@ export default function AddInvoice() {
       const amount = totalFees > 0 ? totalFees : (Number(selectedProject.amount) || 0);
 
       const newItems = [...formData.items];
-      
+
       // Find the first empty row
       let emptyIndex = newItems.findIndex(item => item.particulars.trim() === '' && (!item.amount || Number(item.amount) === 0));
-      
+
       if (emptyIndex === -1) {
         // No empty row found, append a new one
         emptyIndex = newItems.length;
@@ -222,7 +222,7 @@ export default function AddInvoice() {
         project: projectId, // Keeps reference to the last added project for the DB
         items: newItems
       }));
-      
+
       // Reset dropdown so they can pick another project
       setSelectedProjectId('');
     }
@@ -348,7 +348,7 @@ export default function AddInvoice() {
             {/* Left: Brand */}
             <div className="p-5 border-b md:border-b-0 md:border-r border-slate-300">
               <h2 className="text-3xl font-black tracking-tight" style={{ fontFamily: 'Georgia, serif', color: '#2563eb' }}>
-                Perfectrans<sup className="text-xs align-super">™</sup>
+                SUJAATRANCE<sup className="text-xs align-super">™</sup>
               </h2>
               <p className="text-xs text-slate-500 mt-0.5">A Brand of Convaq Technologies Pvt. Ltd.</p>
             </div>

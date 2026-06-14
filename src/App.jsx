@@ -39,6 +39,9 @@ import AddProject from "./pages/AddProject";
 import ViewProject from "./pages/ViewProject";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
+import MonthwiseSales from "./pages/MonthwiseSales";
+import YearwiseFinance from "./pages/YearwiseFinance";
+import DailyRevenue from "./pages/DailyRevenue";
 
 // Generic placeholder for other pages
 const PagePlaceholder = ({ title, icon }) => (
@@ -148,6 +151,9 @@ const App = () => {
             <Route path="add-invoice" element={<AddInvoice />} />
             <Route path="view-invoice/:id" element={<ViewInvoice />} />
           </Route>
+          <Route path="finance/monthwise-finence" element={<MonthwiseSales />} />
+          <Route path="finance/yearwise-finence" element={<YearwiseFinance />} />
+          <Route path="finance/daily-revenue" element={<DailyRevenue />} />
           <Route path="report" element={<PagePlaceholder title="Analytics & Reports" icon="fa-chart-pie" />} />
           <Route path="logout" element={<Navigate to="/login" replace />} />
           <Route path="*" element={<PagePlaceholder title="Page Not Found" icon="fa-circle-exclamation" />} />

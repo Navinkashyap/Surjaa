@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import brandLogo from "../assets/logo.jpeg";
+import brandLogo from "../srujaa.jpeg";
 import { Mail, Lock, Eye, EyeOff, ShieldCheck, ArrowRight, CheckCircle2, Sparkles, AlertCircle } from "lucide-react";
 import { login } from "../lib/authApi";
 
@@ -22,7 +22,7 @@ const Login = () => {
     e.preventDefault();
     setIsLoading(true);
     setError("");
-    
+
     try {
       await login(formData.email, formData.password);
       navigate("/");
@@ -35,7 +35,7 @@ const Login = () => {
 
   return (
     <div className="flex min-h-screen w-full bg-white selection:bg-indigo-500/30 font-sans">
-      
+
       {/* Left Panel: Branding & Marketing (Hidden on Mobile) */}
       <div className="hidden lg:flex relative w-[55%] bg-[#0a0a0c] overflow-hidden flex-col justify-between p-12">
         {/* Dynamic Background Effects */}
@@ -52,8 +52,8 @@ const Login = () => {
             <img src={brandLogo} alt="Logo" className="w-full h-full object-contain rounded-lg" />
           </div>
           <div>
-             <h2 className="text-xl font-black text-white tracking-tight italic">PERFECTRANS</h2>
-             <p className="text-[10px] font-bold text-indigo-400 tracking-[0.2em] uppercase">Enterprise</p>
+            <h2 className="text-xl font-black text-white tracking-tight italic">SUJAATRANCE</h2>
+            <p className="text-[10px] font-bold text-indigo-400 tracking-[0.2em] uppercase">Enterprise</p>
           </div>
         </div>
 
@@ -64,7 +64,7 @@ const Login = () => {
             <span>New Enterprise Workspace 2.0</span>
           </div>
           <h1 className="text-5xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
-            Streamline your <br/>
+            Streamline your <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-300">translation workflows</span>
           </h1>
           <p className="text-lg text-slate-400 mb-10 font-medium leading-relaxed max-w-md">
@@ -90,11 +90,11 @@ const Login = () => {
 
         {/* Bottom Footer */}
         <div className="relative z-10 flex items-center justify-between text-slate-500 text-xs font-semibold uppercase tracking-widest">
-           <span>© 2026 Perfectrans</span>
-           <div className="flex gap-6">
-             <a href="#" className="hover:text-white transition-colors">Privacy</a>
-             <a href="#" className="hover:text-white transition-colors">Terms</a>
-           </div>
+          <span>© 2026 Sujaatrance</span>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white transition-colors">Privacy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms</a>
+          </div>
         </div>
       </div>
 
@@ -105,7 +105,7 @@ const Login = () => {
           <div className="w-16 h-16 bg-white rounded-2xl p-1.5 shadow-xl shadow-slate-200 border border-slate-100 mb-4">
             <img src={brandLogo} alt="Logo" className="w-full h-full object-contain rounded-xl" />
           </div>
-          <h2 className="text-2xl font-black text-slate-900 tracking-tight italic">PERFECTRANS</h2>
+          <h2 className="text-2xl font-black text-slate-900 tracking-tight italic">SUJAATRANCE</h2>
         </div>
 
         <div className="w-full max-w-md animate-in fade-in zoom-in-95 duration-700">
@@ -135,7 +135,7 @@ const Login = () => {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full h-14 pl-12 pr-4 bg-white border border-slate-200 rounded-2xl text-slate-900 font-bold placeholder:text-slate-400 placeholder:font-medium focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-600 transition-all shadow-sm"
-                  placeholder="admin@perfectrans.com"
+                  placeholder="admin@sujaatrance.com"
                 />
               </div>
             </div>
@@ -190,21 +190,21 @@ const Login = () => {
           </form>
 
           <div className="mt-8 text-center lg:text-left">
-             <p className="text-sm font-medium text-slate-500">
-               Don't have an account? <button className="text-indigo-600 font-bold hover:underline">Contact Admin</button>
-             </p>
+            <p className="text-sm font-medium text-slate-500">
+              Don't have an account? <button className="text-indigo-600 font-bold hover:underline">Contact Admin</button>
+            </p>
           </div>
         </div>
-        
+
         {/* Minimal Support Links Bottom Right */}
         <div className="absolute bottom-6 right-8 hidden lg:flex items-center gap-6 opacity-60 hover:opacity-100 transition-opacity">
-           <div className="flex items-center gap-2 text-slate-600">
-             <ShieldCheck size={14} />
-             <span className="text-[10px] font-black uppercase tracking-widest">Enterprise Secure</span>
-           </div>
+          <div className="flex items-center gap-2 text-slate-600">
+            <ShieldCheck size={14} />
+            <span className="text-[10px] font-black uppercase tracking-widest">Enterprise Secure</span>
+          </div>
         </div>
       </div>
-      
+
     </div>
   );
 };

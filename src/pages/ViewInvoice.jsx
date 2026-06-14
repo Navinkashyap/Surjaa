@@ -42,7 +42,7 @@ export default function ViewInvoice() {
   return (
     <div className="min-h-screen bg-slate-50/50 text-slate-900 pb-20 animate-in fade-in duration-500">
       <div className="max-w-5xl mx-auto p-4 md:p-8 space-y-6">
-        
+
         {/* Header Actions */}
         <div className="flex items-center justify-between print:hidden">
           <button
@@ -61,12 +61,12 @@ export default function ViewInvoice() {
 
         {/* INVOICE PAPER */}
         <div className="bg-white border border-slate-200 rounded-[2rem] shadow-2xl shadow-slate-200/50 overflow-hidden print:shadow-none print:border-none print:rounded-none printable-invoice">
-          
+
           {/* Top Brand & Info */}
           <div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 border-b border-slate-100">
             <div className="p-5 md:p-6 border-b md:border-b-0 md:border-r print:border-b-0 print:border-r border-slate-100 flex flex-col justify-center">
               <h2 className="text-4xl font-black tracking-tight text-blue-700" style={{ fontFamily: 'Georgia, serif' }}>
-                Perfectrans<sup className="text-sm align-super text-blue-500">™</sup>
+                SUJAATRANCE<sup className="text-sm align-super text-blue-500">™</sup>
               </h2>
               <p className="text-sm text-slate-500 font-medium mt-1">A Brand of Convaq Technologies Pvt. Ltd.</p>
             </div>
@@ -86,12 +86,11 @@ export default function ViewInvoice() {
                 </div>
                 <div className="flex justify-between items-center pt-1">
                   <span className="font-bold text-slate-400 text-xs uppercase tracking-wider">Status</span>
-                  <span className={`px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${
-                    invoice.status === 'Paid' ? 'bg-emerald-100 text-emerald-700' :
-                    invoice.status === 'Pending' ? 'bg-amber-100 text-amber-700' :
-                    invoice.status === 'Draft' ? 'bg-slate-100 text-slate-600' :
-                    'bg-rose-100 text-rose-700'
-                  }`}>
+                  <span className={`px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${invoice.status === 'Paid' ? 'bg-emerald-100 text-emerald-700' :
+                      invoice.status === 'Pending' ? 'bg-amber-100 text-amber-700' :
+                        invoice.status === 'Draft' ? 'bg-slate-100 text-slate-600' :
+                          'bg-rose-100 text-rose-700'
+                    }`}>
                     {invoice.status}
                   </span>
                 </div>
@@ -157,12 +156,12 @@ export default function ViewInvoice() {
           {/* Totals */}
           <div className="border-t border-slate-200 flex flex-col md:flex-row print:flex-row">
             <div className="flex-1 p-5 md:p-6 border-b md:border-b-0 md:border-r print:border-b-0 print:border-r border-slate-100 bg-slate-50/50">
-               <div className="h-full flex flex-col justify-end">
-                 <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Notes / Terms</p>
-                 <p className="text-sm text-slate-600 font-medium max-w-sm">
-                   Please review all details before processing payment. Thank you for doing business with us!
-                 </p>
-               </div>
+              <div className="h-full flex flex-col justify-end">
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Notes / Terms</p>
+                <p className="text-sm text-slate-600 font-medium max-w-sm">
+                  Please review all details before processing payment. Thank you for doing business with us!
+                </p>
+              </div>
             </div>
             <div className="w-full md:w-96 print:w-96 bg-slate-50">
               <div className="p-5 md:p-6 space-y-2.5">

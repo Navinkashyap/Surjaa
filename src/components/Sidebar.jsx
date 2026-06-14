@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import brandLogo from "../assets/logo.jpeg";
+import brandLogo from "../srujaa.jpeg";
 import { logout } from "../lib/authApi";
 import {
   LayoutDashboard,
@@ -20,7 +20,8 @@ import {
   Settings,
   Command,
   LogOut,
-  Bell
+  Bell,
+  IndianRupee
 } from "lucide-react";
 
 // --- Configuration ---
@@ -28,13 +29,26 @@ import {
 const navItems = [
   { label: "Dashboard", icon: LayoutDashboard, to: "/", sub: [] },
   {
-    label: "Add Admin",
-    icon: User,
-    to: null,
-    sub: [
-      { label: "Add Admin", to: "/add-admin" },
-    ],
+    label: "Finance", icon: IndianRupee, to: "/finance", sub: [
+
+      { label: "Monthwise Sales", to: "/finance/monthwise-finence" },
+      { label: "Yearwise Finence", to: "/finance/yearwise-finence" },
+      { label: "Daily Revenue", to: "/finance/daily-revenue" },
+
+
+
+
+    ]
   },
+
+  // {
+  //   label: "Add Admin",
+  //   icon: User,
+  //   to: null,
+  //   sub: [
+  //     { label: "Add Admin", to: "/add-admin" },
+  //   ],
+  // },
   {
     label: "Master",
     icon: Database,
@@ -163,7 +177,7 @@ const Sidebar = ({ isCollapsed = false }) => {
 
           {!isCollapsed && (
             <div className="flex flex-col">
-              <span className="text-base font-black tracking-tight text-white leading-tight">PERFECTRANS</span>
+              <span className="text-base font-black tracking-tight text-white leading-tight">SUJAATRANCE</span>
               <span className="text-[9px] font-bold text-indigo-400/80 tracking-[0.2em] uppercase">Enterprise</span>
             </div>
           )}
@@ -331,7 +345,7 @@ const Sidebar = ({ isCollapsed = false }) => {
             <button className="p-2 text-slate-500 hover:text-white transition-colors">
               <Settings size={18} className="hover:rotate-45 transition-transform duration-500" />
             </button>
-            <button 
+            <button
               onClick={handleLogout}
               className="p-2 text-red-500/70 hover:text-red-400 transition-colors"
             >
@@ -365,9 +379,9 @@ const Sidebar = ({ isCollapsed = false }) => {
               <p className="text-[10px] font-medium text-slate-500 uppercase">Super Admin</p>
               <div className="mt-2 pt-2 border-t border-white/5 flex gap-2">
                 <Settings size={14} className="text-slate-500 hover:text-white cursor-pointer" />
-                <LogOut 
-                  size={14} 
-                  className="text-red-500/70 hover:text-red-400 cursor-pointer" 
+                <LogOut
+                  size={14}
+                  className="text-red-500/70 hover:text-red-400 cursor-pointer"
                   onClick={handleLogout}
                 />
               </div>
