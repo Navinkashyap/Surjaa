@@ -24,8 +24,8 @@ services:
   # Frontend Static Site
   - type: web
     name: ctrms-frontend
-    runtime: static
-    buildCommand: npm install && npm run build
+    env: static
+    buildCommand: export VITE_API_BASE_URL="https://$BACKEND_HOST/api" && npm install && npm run build
     staticPublishPath: ./dist
     routes:
       - type: rewrite
@@ -37,5 +37,3 @@ services:
           type: web
           name: ctrms-backend
           property: host
-      - key: VITE_API_BASE_URL
-        value: https://${BACKEND_HOST}/api
