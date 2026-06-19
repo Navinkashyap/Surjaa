@@ -23,7 +23,7 @@ services:
 
   # Frontend Static Site
   - type: web
-    name: ctrms-frontend
+    name: surjaa-1
     env: static
     buildCommand: export VITE_API_BASE_URL="https://$BACKEND_HOST/api" && npm install && npm run build
     staticPublishPath: ./dist
