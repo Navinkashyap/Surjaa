@@ -1,7 +1,7 @@
 services:
   # Backend Web Service
   - type: web
-    name: ctrms-backend
+    name: surjaa
     env: node
     buildCommand: cd Backend && npm install
     startCommand: cd Backend && npm start
@@ -35,5 +35,5 @@ services:
       - key: BACKEND_HOST
         fromService:
           type: web
-          name: ctrms-backend
+          name: surjaa
           property: host
