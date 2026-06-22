@@ -43,6 +43,26 @@ const clientSchema = new mongoose.Schema(
       trim: true,
       default: "",
     },
+    primaryContact: {
+      type: String,
+      trim: true,
+      default: "",
+    },
+    methodOfInvoicing: {
+      type: String,
+      trim: true,
+      default: "",
+    },
+    poRequired: {
+      type: String,
+      enum: ["Yes", "No"],
+      default: "No",
+    },
+    paymentTerm: {
+      type: String,
+      trim: true,
+      default: "",
+    },
     address: {
       type: String,
       trim: true,

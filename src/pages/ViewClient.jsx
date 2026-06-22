@@ -147,7 +147,11 @@ export default function ViewClient() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <DetailItem icon={Building2} label="Company Name" value={client.name} />
                 <DetailItem icon={Award} label="Client Code" value={client.membershipCode?.replace('CLI-', '')} />
-                <DetailItem icon={Globe} label="Domain" value={client.domain} />
+                <DetailItem icon={Globe} label="Client Type" value={client.domain} />
+                <DetailItem icon={User} label="Primary Contact" value={client.primaryContact} />
+                <DetailItem icon={FileText} label="Method of Invoicing" value={client.methodOfInvoicing} />
+                <DetailItem icon={Award} label="PO Required" value={client.poRequired} />
+                <DetailItem icon={CircleDollarSign} label="Payment Term" value={client.paymentTerm} />
                 <DetailItem
                   icon={Award}
                   label="Membership"

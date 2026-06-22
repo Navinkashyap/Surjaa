@@ -52,8 +52,7 @@ const Login = () => {
             <img src={brandLogo} alt="Logo" className="w-full h-full object-contain rounded-lg" />
           </div>
           <div>
-            <h2 className="text-xl font-black text-white tracking-tight italic">Srujaa</h2>
-            <p className="text-[10px] font-bold text-indigo-400 tracking-[0.2em] uppercase">Translation</p>
+            <h2 className="text-xl font-black text-white tracking-tight italic">Sujaatrance</h2>
           </div>
         </div>
 

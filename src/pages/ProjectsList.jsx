@@ -41,6 +41,9 @@ const formatProject = (project, managerMap = {}) => ({
   deadline: project.deadline
     ? new Date(project.deadline).toISOString().split('T')[0]
     : '—',
+  cgst: project.gstEnabled && project.cgstPercent ? `${project.cgstPercent}%` : '—',
+  sgst: project.gstEnabled && project.sgstPercent ? `${project.sgstPercent}%` : '—',
+  igst: project.gstEnabled && project.igstPercent ? `${project.igstPercent}%` : '—',
 });
 
 const allColumns = [
@@ -49,6 +52,9 @@ const allColumns = [
   { id: 'service', label: 'Service' },
   { id: 'manager', label: 'Manager' },
   { id: 'budget', label: 'Budget' },
+  { id: 'cgst', label: 'CGST' },
+  { id: 'sgst', label: 'SGST' },
+  { id: 'igst', label: 'IGST' },
   { id: 'priority', label: 'Priority' },
   { id: 'deadline', label: 'Deadline' },
   { id: 'progress', label: 'Progress' },
@@ -351,6 +357,9 @@ export default function ProjectsList() {
                   {visibleColumns.includes('service') && <th className="px-6 py-4 font-semibold text-slate-500 text-xs uppercase tracking-wider">Service</th>}
                   {visibleColumns.includes('manager') && <th className="px-6 py-4 font-semibold text-slate-500 text-xs uppercase tracking-wider">Manager</th>}
                   {visibleColumns.includes('budget') && <th className="px-6 py-4 font-semibold text-slate-500 text-xs uppercase tracking-wider">Budget</th>}
+                  {visibleColumns.includes('cgst') && <th className="px-6 py-4 font-semibold text-slate-500 text-xs uppercase tracking-wider">CGST</th>}
+                  {visibleColumns.includes('sgst') && <th className="px-6 py-4 font-semibold text-slate-500 text-xs uppercase tracking-wider">SGST</th>}
+                  {visibleColumns.includes('igst') && <th className="px-6 py-4 font-semibold text-slate-500 text-xs uppercase tracking-wider">IGST</th>}
                   {visibleColumns.includes('priority') && <th className="px-6 py-4 font-semibold text-slate-500 text-xs uppercase tracking-wider">Priority</th>}
                   {visibleColumns.includes('deadline') && <th className="px-6 py-4 font-semibold text-slate-500 text-xs uppercase tracking-wider">Deadline</th>}
                   {visibleColumns.includes('progress') && <th className="px-6 py-4 font-semibold text-slate-500 text-xs uppercase tracking-wider">Progress</th>}
@@ -441,6 +450,24 @@ export default function ProjectsList() {
                     {visibleColumns.includes('budget') && (
                       <td className="px-6 py-4 font-semibold text-emerald-600">
                         {project.budget}
+                      </td>
+                    )}
+
+                    {visibleColumns.includes('cgst') && (
+                      <td className="px-6 py-4 text-slate-600">
+                        {project.cgst}
+                      </td>
+                    )}
+
+                    {visibleColumns.includes('sgst') && (
+                      <td className="px-6 py-4 text-slate-600">
+                        {project.sgst}
+                      </td>
+                    )}
+
+                    {visibleColumns.includes('igst') && (
+                      <td className="px-6 py-4 text-slate-600">
+                        {project.igst}
                       </td>
                     )}
 

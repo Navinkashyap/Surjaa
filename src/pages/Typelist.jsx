@@ -78,12 +78,12 @@ export default function Typelist() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-1">
             <h1 className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent">
-              Domain List
+              Client Type List
             </h1>
             <p className="text-slate-500 font-medium tracking-wide flex items-center gap-2">
               Entity Classifications
               <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold bg-blue-50 text-blue-600 border border-blue-100 uppercase tracking-tighter">
-                {filteredTypes.length} Domains
+                {filteredTypes.length} Client Types
               </span>
             </p>
           </div>
@@ -93,7 +93,7 @@ export default function Typelist() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-600 group-focus-within:text-blue-500 transition-colors" />
               <input
                 type="text"
-                placeholder="Search domain..."
+                placeholder="Search client type..."
                 className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all shadow-sm placeholder:text-slate-600"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -107,7 +107,7 @@ export default function Typelist() {
               className="inline-flex items-center gap-2 bg-[#1e293b] hover:bg-slate-800 text-white px-5 py-2.5 rounded-2xl transition-all shadow-md font-bold active:scale-[0.98]"
             >
               <Plus className="w-5 h-5" />
-              <span className="hidden sm:inline">Add Domain</span>
+              <span className="hidden sm:inline">Add Client Type</span>
             </button>
           </div>
         </div>
@@ -124,7 +124,7 @@ export default function Typelist() {
                 <thead>
                   <tr className="border-b border-slate-100">
                     <th className="px-6 py-5 font-bold text-slate-500 uppercase tracking-widest text-[11px] w-16 text-center">#</th>
-                    <th className="px-6 py-5 font-bold text-slate-500 uppercase tracking-widest text-[11px]">Domain</th>
+                    <th className="px-6 py-5 font-bold text-slate-500 uppercase tracking-widest text-[11px]">Client Type</th>
 
                     <th className="px-6 py-5 font-bold text-slate-500 uppercase tracking-widest text-[11px] w-24 text-center">
                       <MoreHorizontal className="w-4 h-4 mx-auto" />
@@ -202,7 +202,7 @@ export default function Typelist() {
               <form onSubmit={handleSave} className="space-y-6">
                 <div className="grid grid-cols-1 gap-6">
                   <div className="space-y-2 group">
-                    <label className="text-xs font-black text-slate-600 uppercase tracking-widest pl-1">Domain Name</label>
+                    <label className="text-xs font-black text-slate-600 uppercase tracking-widest pl-1">Client Type</label>
                     <input
                       required autoFocus type="text"
                       className="w-full px-5 py-3.5 bg-slate-50 border border-transparent rounded-2xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-[15px] font-bold"

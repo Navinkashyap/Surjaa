@@ -66,7 +66,7 @@ const navItems = [
       { label: "Specialization", to: "/master/specialization" },
       { label: "Quality", to: "/master/quality" },
       { label: "Deadline", to: "/master/deadline" },
-      { label: "Domain", to: "/master/type" },
+      { label: "Client Type", to: "/master/type" },
       { label: "Membership", to: "/master/membership" },
       { label: "Department", to: "/master/department" },
       { label: "Unit", to: "/master/unit" },
@@ -177,8 +177,7 @@ const Sidebar = ({ isCollapsed = false }) => {
 
           {!isCollapsed && (
             <div className="flex flex-col">
-              <span className="text-base font-black tracking-tight text-white leading-tight">Srujaa </span>
-              <span className="text-[9px] font-bold text-indigo-400/80 tracking-[0.2em] uppercase">Translation</span>
+              <span className="text-base font-black tracking-tight text-white leading-tight">Sujaatrance </span>
             </div>
           )}
         </NavLink>

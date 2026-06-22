@@ -23,7 +23,7 @@ import {
 import { getClients } from '../lib/clientApi';
 
 const allColumns = [
-  { id: 'domain', label: 'Domain' },
+  { id: 'domain', label: 'Client Type' },
   { id: 'status', label: 'Status' },
   { id: 'membership', label: 'Membership' },
   { id: 'name', label: 'Name' },
@@ -219,7 +219,7 @@ export default function ClientList() {
               <thead>
                 <tr className="bg-slate-50/80 border-b border-slate-100/80">
                   {renderSortableHeader('membershipCode', 'Client Code')}
-                  {visibleColumns.includes('domain') && renderSortableHeader('domain', 'Domain')}
+                  {visibleColumns.includes('domain') && renderSortableHeader('domain', 'Client Type')}
                   {visibleColumns.includes('status') && renderSortableHeader('status', 'Status')}
                   {visibleColumns.includes('membership') && renderSortableHeader('membership', 'Membership')}
                   {visibleColumns.includes('name') && renderSortableHeader('name', 'Name')}

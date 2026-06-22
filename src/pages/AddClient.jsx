@@ -52,6 +52,10 @@ const getInitialFormData = () => ({
   registrationDate: new Date().toISOString().split('T')[0],
   createdBy: 'System Admin',
   notes: '',
+  primaryContact: '',
+  methodOfInvoicing: '',
+  poRequired: 'No',
+  paymentTerm: '',
 });
 
 const normalizeClientForForm = (client) => {
@@ -90,6 +94,10 @@ const normalizeClientForForm = (client) => {
     gstIn: client?.gstIn || '',
     vat: client?.vat || '',
     notes: client?.notes || '',
+    primaryContact: client?.primaryContact || '',
+    methodOfInvoicing: client?.methodOfInvoicing || '',
+    poRequired: client?.poRequired || 'No',
+    paymentTerm: client?.paymentTerm || '',
   };
 };
 
@@ -347,6 +355,10 @@ export default function AddClient() {
       formDataToSend.append('registrationDate', formData.registrationDate);
       formDataToSend.append('createdBy', formData.createdBy || 'System Admin');
       formDataToSend.append('notes', formData.notes || '');
+      formDataToSend.append('primaryContact', formData.primaryContact || '');
+      formDataToSend.append('methodOfInvoicing', formData.methodOfInvoicing || '');
+      formDataToSend.append('poRequired', formData.poRequired || 'No');
+      formDataToSend.append('paymentTerm', formData.paymentTerm || '');
 
       if (isEditMode) {
         formDataToSend.append('existingDocuments', JSON.stringify(formData.existingDocuments || []));
@@ -455,7 +467,7 @@ export default function AddClient() {
                   />
                 </FormField>
 
-                <FormField icon={Globe} label="Domain">
+                <FormField icon={Globe} label="Client Type">
                   <select
                     className={inputClass}
                     value={formData.domain}
@@ -470,9 +482,50 @@ export default function AddClient() {
                         </option>
                       ))
                     ) : (
-                      <option>No domains found</option>
+                      <option>No client types found</option>
                     )}
                   </select>
+                </FormField>
+
+                <FormField icon={User} label="Primary Contact">
+                  <input
+                    type="text"
+                    className={inputClass}
+                    placeholder="Primary Contact"
+                    value={formData.primaryContact}
+                    onChange={(e) => updateField('primaryContact', e.target.value)}
+                  />
+                </FormField>
+
+                <FormField icon={FileText} label="Method of Invoicing">
+                  <input
+                    type="text"
+                    className={inputClass}
+                    placeholder="e.g. Monthly, Per Project"
+                    value={formData.methodOfInvoicing}
+                    onChange={(e) => updateField('methodOfInvoicing', e.target.value)}
+                  />
+                </FormField>
+
+                <FormField icon={Award} label="PO Required">
+                  <select
+                    className={inputClass}
+                    value={formData.poRequired}
+                    onChange={(e) => updateField('poRequired', e.target.value)}
+                  >
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </FormField>
+
+                <FormField icon={CircleDollarSign} label="Payment Term">
+                  <input
+                    type="text"
+                    className={inputClass}
+                    placeholder="e.g. Net 30, Net 60"
+                    value={formData.paymentTerm}
+                    onChange={(e) => updateField('paymentTerm', e.target.value)}
+                  />
                 </FormField>
 
                 <FormField icon={Award} label="Status" required>
