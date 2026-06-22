@@ -52,7 +52,7 @@ const Login = () => {
             <img src={brandLogo} alt="Logo" className="w-full h-full object-contain rounded-lg" />
           </div>
           <div>
-            <h2 className="text-xl font-black text-white tracking-tight italic">Sujaatrance</h2>
+            <h2 className="text-xl font-black text-white tracking-tight italic">Srujaatrans</h2>
           </div>
         </div>
 
@@ -89,7 +89,7 @@ const Login = () => {
 
         {/* Bottom Footer */}
         <div className="relative z-10 flex items-center justify-between text-slate-500 text-xs font-semibold uppercase tracking-widest">
-          <span>© 2026 Sujaatrance</span>
+          <span>© 2026 Srujaatrans</span>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy</a>
             <a href="#" className="hover:text-white transition-colors">Terms</a>
@@ -104,7 +104,7 @@ const Login = () => {
           <div className="w-16 h-16 bg-white rounded-2xl p-1.5 shadow-xl shadow-slate-200 border border-slate-100 mb-4">
             <img src={brandLogo} alt="Logo" className="w-full h-full object-contain rounded-xl" />
           </div>
-          <h2 className="text-2xl font-black text-slate-900 tracking-tight italic">SUJAATRANCE</h2>
+          <h2 className="text-2xl font-black text-slate-900 tracking-tight italic">Srujaatrans</h2>
         </div>
 
         <div className="w-full max-w-md animate-in fade-in zoom-in-95 duration-700">
@@ -134,7 +134,7 @@ const Login = () => {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full h-14 pl-12 pr-4 bg-white border border-slate-200 rounded-2xl text-slate-900 font-bold placeholder:text-slate-400 placeholder:font-medium focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-600 transition-all shadow-sm"
-                  placeholder="admin@sujaatrance.com"
+                  placeholder="admin@Srujaatrans.com"
                 />
               </div>
             </div>

@@ -177,7 +177,7 @@ const Sidebar = ({ isCollapsed = false }) => {
 
           {!isCollapsed && (
             <div className="flex flex-col">
-              <span className="text-base font-black tracking-tight text-white leading-tight">Sujaatrance </span>
+              <span className="text-base font-black tracking-tight text-white leading-tight">Srujaatrans </span>
             </div>
           )}
         </NavLink>

@@ -12,7 +12,7 @@ const Footer = () => {
         color: "#6b7280",
       }}
     >
-      Copyright &copy; 2026 Sujaatrance. All rights reserved.
+      Copyright &copy; 2026 Srujaatrans. All rights reserved.
     </footer>
   );
 };

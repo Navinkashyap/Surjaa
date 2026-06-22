@@ -66,7 +66,7 @@ export default function ViewInvoice() {
           <div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 border-b border-slate-100">
             <div className="p-5 md:p-6 border-b md:border-b-0 md:border-r print:border-b-0 print:border-r border-slate-100 flex flex-col justify-center">
               <h2 className="text-4xl font-black tracking-tight text-blue-700" style={{ fontFamily: 'Georgia, serif' }}>
-                SUJAATRANCE<sup className="text-sm align-super text-blue-500">™</sup>
+                Srujaatrans<sup className="text-sm align-super text-blue-500">™</sup>
               </h2>
               <p className="text-sm text-slate-500 font-medium mt-1">A Brand of Convaq Technologies Pvt. Ltd.</p>
             </div>
@@ -87,9 +87,9 @@ export default function ViewInvoice() {
                 <div className="flex justify-between items-center pt-1">
                   <span className="font-bold text-slate-400 text-xs uppercase tracking-wider">Status</span>
                   <span className={`px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${invoice.status === 'Paid' ? 'bg-emerald-100 text-emerald-700' :
-                      invoice.status === 'Pending' ? 'bg-amber-100 text-amber-700' :
-                        invoice.status === 'Draft' ? 'bg-slate-100 text-slate-600' :
-                          'bg-rose-100 text-rose-700'
+                    invoice.status === 'Pending' ? 'bg-amber-100 text-amber-700' :
+                      invoice.status === 'Draft' ? 'bg-slate-100 text-slate-600' :
+                        'bg-rose-100 text-rose-700'
                     }`}>
                     {invoice.status}
                   </span>

@@ -12,11 +12,11 @@ const EMPTY_ITEMS = Array.from({ length: 10 }, (_, i) => ({
 }));
 
 const DEFAULT_FROM = {
-  fromCompany: 'Sujaatrance',
+  fromCompany: 'Srujaatrans',
   fromAddress: 'B-11, Sector 65, Noida, IN 2001301',
   fromPhone: '+91-120-4280-274',
-  fromEmail: 'accounts@sujaatrance.com',
-  fromWebsite: 'www.sujaatrance.com',
+  fromEmail: 'accounts@Srujaatrans.com',
+  fromWebsite: 'www.Srujaatrans.com',
   fromGSTIN: '09AAGCC0048P1ZD',
 };
 
@@ -32,7 +32,7 @@ const DEFAULT_BANK = {
   swiftCode: 'ICICINBBCTS',
   micrCode: '110229002',
   accountType: 'Current',
-  paypalEmail: 'paypal@sujaatrance.com',
+  paypalEmail: 'paypal@Srujaatrans.com',
   payoneerEmail: '',
 };
 
@@ -348,7 +348,7 @@ export default function AddInvoice() {
             {/* Left: Brand */}
             <div className="p-5 border-b md:border-b-0 md:border-r border-slate-300">
               <h2 className="text-3xl font-black tracking-tight" style={{ fontFamily: 'Georgia, serif', color: '#2563eb' }}>
-                SUJAATRANCE<sup className="text-xs align-super">™</sup>
+                Srujaatrans<sup className="text-xs align-super">™</sup>
               </h2>
               <p className="text-xs text-slate-500 mt-0.5">A Brand of Convaq Technologies Pvt. Ltd.</p>
             </div>
