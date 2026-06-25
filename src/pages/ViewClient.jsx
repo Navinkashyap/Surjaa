@@ -150,7 +150,7 @@ export default function ViewClient() {
                 <DetailItem icon={Globe} label="Client Type" value={client.domain} />
                 <DetailItem icon={User} label="Primary Contact" value={client.primaryContact} />
                 <DetailItem icon={FileText} label="Method of Invoicing" value={client.methodOfInvoicing} />
-                <DetailItem icon={Award} label="PO Required" value={client.poRequired} />
+                <DetailItem icon={Award} label="Shares PO" value={client.poRequired} />
                 <DetailItem icon={CircleDollarSign} label="Payment Term" value={client.paymentTerm} />
                 <DetailItem
                   icon={Award}

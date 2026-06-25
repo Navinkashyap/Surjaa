@@ -61,7 +61,7 @@ const getInitialFormData = () => ({
 const normalizeClientForForm = (client) => {
   let countryCode = '+91';
   let phone = client?.phone || '';
-  
+
   const knownCodes = ['+91', '+1', '+44', '+61', '+971', '+65', '+86', '+81', '+49', '+33'];
   for (const code of knownCodes) {
     if (phone.startsWith(code + ' ')) {
@@ -328,7 +328,7 @@ export default function AddClient() {
 
     try {
       const formDataToSend = new FormData();
-      
+
       formDataToSend.append('domain', formData.domain.trim());
       formDataToSend.append('status', formData.status);
       if (Array.isArray(formData.membership)) {
@@ -340,10 +340,10 @@ export default function AddClient() {
       formDataToSend.append('name', formData.name.trim());
       formDataToSend.append('website', formData.website.trim());
       if (formData.email) formDataToSend.append('email', formData.email.trim());
-      
+
       const formattedPhone = formData.phone.trim() ? `${formData.countryCode} ${formData.phone.trim()}` : '';
       formDataToSend.append('phone', formattedPhone);
-      
+
       formDataToSend.append('address', formData.address.trim());
       formDataToSend.append('city', formData.city.trim());
       if (formData.state) formDataToSend.append('state', formData.state.trim());
@@ -507,7 +507,7 @@ export default function AddClient() {
                   />
                 </FormField>
 
-                <FormField icon={Award} label="PO Required">
+                <FormField icon={Award} label="Shares PO">
                   <select
                     className={inputClass}
                     value={formData.poRequired}

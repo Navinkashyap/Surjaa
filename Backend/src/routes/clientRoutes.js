@@ -16,7 +16,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "sadminperfectras_documents",
+    folder: "sujaatrance_documents",
     allowed_formats: ["jpg", "png", "jpeg", "pdf", "docx", "doc"],
     resource_type: "auto",
   },
