@@ -95,7 +95,7 @@ export default function VendorList() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-4 sm:px-6 rounded-3xl border border-slate-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
           <div className="space-y-1.5">
             <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
-              Vendor Directory
+              Vendor Manger
             </h1>
             <p className="text-slate-500 text-sm font-medium tracking-wide flex items-center gap-3">
               Global Resource Management

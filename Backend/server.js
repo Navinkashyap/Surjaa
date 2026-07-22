@@ -30,6 +30,8 @@ import dashboardRoutes from "./src/routes/dashboardRoutes.js";
 import dailyRevenueRoutes from "./src/routes/dailyRevenueRoutes.js";
 import monthwiseSaleRoutes from "./src/routes/monthwiseSaleRoutes.js";
 import yearwiseFinanceRoutes from "./src/routes/yearwiseFinanceRoutes.js";
+import projectManagerRoutes from "./src/routes/projectManagerRoutes.js";
+import vmsAuthRoutes from "./src/routes/vmsAuthRoutes.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -82,6 +84,8 @@ app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/daily-revenues", dailyRevenueRoutes);
 app.use("/api/monthwise-sales", monthwiseSaleRoutes);
 app.use("/api/yearwise-finances", yearwiseFinanceRoutes);
+app.use("/api/project-managers", projectManagerRoutes);
+app.use("/api/vms/auth", vmsAuthRoutes);
 
 app.use((err, _req, res, _next) => {
   console.error(err);

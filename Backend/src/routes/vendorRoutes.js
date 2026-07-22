@@ -1,4 +1,5 @@
 import express from "express";
+import bcrypt from "bcryptjs";
 import Vendor from "../models/Vendor.js";
 
 const router = express.Router();
@@ -34,6 +35,23 @@ router.get("/", async (_req, res, next) => {
   }
 });
 
+// Search vendors
+router.get("/search", async (req, res, next) => {
+  try {
+    const query = req.query.q || "";
+    const vendors = await Vendor.find({
+      $or: [
+        { name: { $regex: query, $options: "i" } },
+        { email: { $regex: query, $options: "i" } },
+        { code: { $regex: query, $options: "i" } },
+      ],
+    }).sort({ createdAt: -1 });
+    res.json(vendors.map(formatVendor));
+  } catch (error) {
+    next(error);
+  }
+});
+
 // Get vendor by ID
 router.get("/:id", async (req, res, next) => {
   try {
@@ -50,7 +68,11 @@ router.get("/:id", async (req, res, next) => {
 // Create new vendor
 router.post("/", async (req, res, next) => {
   try {
-    const vendor = await Vendor.create(req.body);
+    const data = { ...req.body };
+    if (data.password && data.password.trim()) {
+      data.password = await bcrypt.hash(data.password, 10);
+    }
+    const vendor = await Vendor.create(data);
     res.status(201).json(formatVendor(vendor));
   } catch (error) {
     next(error);
@@ -60,7 +82,13 @@ router.post("/", async (req, res, next) => {
 // Update vendor
 router.put("/:id", async (req, res, next) => {
   try {
-    const vendor = await Vendor.findByIdAndUpdate(req.params.id, req.body, {
+    const data = { ...req.body };
+    if (data.password && data.password.trim()) {
+      data.password = await bcrypt.hash(data.password, 10);
+    } else {
+      delete data.password;
+    }
+    const vendor = await Vendor.findByIdAndUpdate(req.params.id, data, {
       new: true,
       runValidators: true,
     });

@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
 
-const vendorSchema = new mongoose.Schema(
+const projectManagerSchema = new mongoose.Schema(
   {
     code: {
       type: String,
-      required: [true, "Vendor code is required"],
+      required: [true, "Project Manager code is required"],
       trim: true,
       unique: true,
     },
     name: {
       type: String,
-      required: [true, "Vendor name is required"],
+      required: [true, "Project Manager name is required"],
       trim: true,
     },
     email: {
@@ -42,10 +42,20 @@ const vendorSchema = new mongoose.Schema(
       trim: true,
       default: "",
     },
-    motherTongue: {
+    state: {
       type: String,
       trim: true,
-      default: "N/A",
+      default: "",
+    },
+    city: {
+      type: String,
+      trim: true,
+      default: "",
+    },
+    zipCode: {
+      type: String,
+      trim: true,
+      default: "",
     },
     ptft: {
       type: String,
@@ -61,24 +71,6 @@ const vendorSchema = new mongoose.Schema(
       trim: true,
       default: "",
     },
-    serviceQuality: {
-      type: Number,
-      default: 0,
-      min: 0,
-      max: 5,
-    },
-    taskQuality: {
-      type: Number,
-      default: 0,
-      min: 0,
-      max: 5,
-    },
-    timelyDelivery: {
-      type: Number,
-      default: 0,
-      min: 0,
-      max: 5,
-    },
     isActive: {
       type: Boolean,
       default: true,
@@ -89,4 +81,4 @@ const vendorSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Vendor", vendorSchema);
+export default mongoose.model("ProjectManager", projectManagerSchema);
